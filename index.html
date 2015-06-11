@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>ImgBox Example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/imgBox.js"></script>
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<script>
+		$(document ).ready( function () {
+			$('.example' ).imgBox();
+			$('.openImgBox').click( function () {
+				$('.example' ).imgBox('show');
+			});
+			$('.openImg_3').click( function () {
+				$('.example' ).imgBox('show', 3);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div align="center" class="example">
+		<img src="img/imgExample/1.jpeg" width="400">
+		<img src="img/imgExample/2.jpg" width="400">
+		<img src="img/imgExample/3.jpg" width="400">
+	</div>
+	<button class="openImgBox">S H O W</button>
+	<button class="openImg_3">S H O W img 3</button>
+</body>
+</html>
