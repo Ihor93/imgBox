@@ -84,20 +84,11 @@ $( document ).ready( function () {
 						if ( imgLenght.length <= 1 ) return false;
 						$( '.OverSlideConteyner .buttons' ).fadeOut();
 						if ( move_left ) {
-							if ( imgActive.attr( 'index' ) == imgLenght.first().attr( 'index' ) ) {
-								imgActive.fadeOut( function () {
-									$( this ).removeClass( 'active' );
-									imgLenght.last().fadeIn().addClass( 'active' );
-									methods[ 'btn_resize' ]();
-								} )
-							} else {
-								imgActive.fadeOut( function () {
-									$( this ).removeClass( 'active' );
-									imgActive.prev().fadeIn().addClass( 'active' );
-									methods[ 'btn_resize' ]();
-								} )
-							}
+							moveLeft()
 						} else {
+							moveRight()
+						}
+						function moveRight () {
 							if ( imgActive.attr( 'index' ) == imgLenght.last().attr( 'index' ) ) {
 								imgActive.fadeOut( function () {
 									$( this ).removeClass( 'active' );
@@ -108,6 +99,21 @@ $( document ).ready( function () {
 								imgActive.fadeOut( function () {
 									$( this ).removeClass( 'active' );
 									imgActive.next().fadeIn().addClass( 'active' );
+									methods[ 'btn_resize' ]();
+								} )
+							}
+						}
+						function moveLeft (){
+							if ( imgActive.attr( 'index' ) == imgLenght.first().attr( 'index' ) ) {
+								imgActive.fadeOut( function () {
+									$( this ).removeClass( 'active' );
+									imgLenght.last().fadeIn().addClass( 'active' );
+									methods[ 'btn_resize' ]();
+								} )
+							} else {
+								imgActive.fadeOut( function () {
+									$( this ).removeClass( 'active' );
+									imgActive.prev().fadeIn().addClass( 'active' );
 									methods[ 'btn_resize' ]();
 								} )
 							}
