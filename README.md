@@ -1,5 +1,5 @@
 # imgBox
- to view images in modal window of opportunity Flip pictures
+ imgBox jQuery plagin to view images in modal window of opportunity flip pictures
 # How to use?
      $('selector' ).imgBox(); //selector in image conteyner 
 		
