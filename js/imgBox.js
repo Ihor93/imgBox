@@ -60,18 +60,20 @@ $( document ).ready( function () {
 						var btn       = $( '.OverSlideConteyner .buttons' ),
 							active    = $( '.slide_img.active' ),
 							imgLenght = $( '.slide_img' ).length;
+							scroll    = $( document ).scrollTop(),
+                        				marginTop = active.offset().top - scroll + 'px';
 						if ( imgLenght < 2 ) {
 							btn.fadeOut();
 							return false;
 						}
 						btn.css( { 'height': active.height() + 'px' } );
 						btn.first().css( {
-							'left': active.css( "margin-left" ),
-							'top': active.css( "margin-top" )
+							'left': active.offset().left + 'px'),
+							'top': marginTop
 						} ).fadeIn();
 						btn.last().css( {
-							'left': active.offset().left + active.width() - btn.first().width(),
-							'top': active.css( "margin-top" )
+							'left': active.offset().left + active.width() - btn.first().width() + 'px',
+							'top': marginTop
 						} ).fadeIn();
 					},
 					hide: function () {
