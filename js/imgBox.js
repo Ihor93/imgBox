@@ -68,7 +68,7 @@ $( document ).ready( function () {
 						}
 						btn.css( { 'height': active.height() + 'px' } );
 						btn.first().css( {
-							'left': active.offset().left + 'px'),
+							'left': active.offset().left + 'px',
 							'top': marginTop
 						} ).fadeIn();
 						btn.last().css( {
